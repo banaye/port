@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Banaye</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <link rel="stylesheet" href="contact.css"/>
+  <script src="contact.js"></script>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="services.html">SERVICES</a>
+    <a href="contact.html" class="active">CONTACT</a>
+  </nav>
+
+  <div class="page">
+
+
+<!-- Hero -->
+<div class="hero">
+  <p class="hero-label">Get in touch</p>
+  <h1>Let's <span>Talk</span></h1>
+  <p>
+    Have a project, an idea, or just want to connect?
+    I'm open to freelance work, collaborations, and new opportunities.
+    Reach out I respond within 24 hours.
+  </p>
+</div>
+
+<div class="divider"></div>
+
+<!-- Two-column layout -->
+<div class="contact-layout">
+
+  <!-- Left: Info -->
+  <div class="contact-info">
+    <h2 class="info-heading">Contact Details</h2>
+    <p class="info-text">
+      Whether you need a backend system, a data solution, or a full product built —
+      let's talk about how I can help.
+    </p>
+
+    <div class="contact-items">
+      <div class="contact-item">
+        <span class="contact-item-icon">📧</span>
+        <div class="contact-item-body">
+          <p class="contact-item-label">Email</p>
+          <p class="contact-item-value">
+            <a href="denisbanayedakurah@gmail.com">denisbanayedakurah@gmail.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-icon">📍</span>
+        <div class="contact-item-body">
+          <p class="contact-item-label">Location</p>
+          <p class="contact-item-value">Available Remotely · Worldwide</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-icon">⏱️</span>
+        <div class="contact-item-body">
+          <p class="contact-item-label">Response Time</p>
+          <p class="contact-item-value">Within 24 hours</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="social-heading">Find me on</p>
+    <div class="social-links">
+      <a href="#" class="social-link">
+        <span>in</span> LinkedIn
+      </a>
+      <a href="#" class="social-link">
+        <span>⌥</span> GitHub
+      </a>
+      <a href="#" class="social-link">
+        <span>◎</span> Instagram
+      </a>
+      <a href="#" class="social-link">
+        <span>ƒ</span> Facebook
+      </a>
+    </div>
+
+    <div class="availability">
+      <span class="dot"></span>
+      Available for new projects
+    </div>
+  </div>
+
+  <!-- Right: Form -->
+  <div class="contact-form-wrap">
+    <div class="form-card">
+      <h2>Send a Message</h2>
+      <p class="form-sub">Fill in the form and I'll get back to you shortly.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Iris" />
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Evan" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="john@example.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="service">Service Interested In</label>
+        <div class="select-wrap">
+          <select id="service">
+            <option value="" disabled selected>Select a service…</option>
+            <option>Software & Backend Engineering</option>
+            <option>Data Analysis</option>
+            <option>Machine Learning</option>
+            <option>Graphic Design</option>
+            <option>Research & Technical Writing</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Tell me about your project…"></textarea>
+      </div>
+
+      <button class="btn-submit" id="submitBtn" onclick="handleSubmit()">Send Message →</button>
+
+      <div class="success-msg" id="successMsg">
+        ✓ Message sent! I'll get back to you within 24 hours.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+  </div>
+
+</body>
+</html>

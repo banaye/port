@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hire Me — Banaye</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="hire.js"></script>
+  <link rel="stylesheet" href="hire.css"/>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="services.html">SERVICES</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+
+  <div class="page">
+
+    <!-- Hero -->
+    <div class="hero">
+      <p class="hero-label">Work with me</p>
+      <h1>Hire <span>Banaye</span></h1>
+      <p>
+        Tell me about your project and I'll get back to you within 24 hours
+        with a clear proposal. Let's build something great together.
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Availability strip -->
+    <div class="avail-strip">
+      <span class="avail-dot"></span>
+      <span class="avail-text"><strong>Currently available</strong> for new projects &amp; freelance work</span>
+      <div class="avail-badges">
+        <span class="badge">Freelance</span>
+        <span class="badge">Contract</span>
+        <span class="badge">Remote</span>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <!-- Replace YOUR_FORM_ID with your Formspree form ID -->
+    <form class="form-card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data" id="hireForm">
+
+      <h2>Project Enquiry</h2>
+      <p class="form-sub">All fields marked <span style="color:var(--red)">*</span> are required.</p>
+
+      <!-- ── SECTION 1: About You ── -->
+      <p class="form-section-label">About You</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name <span class="req">*</span></label>
+          <input type="text" id="fname" name="first_name" placeholder="Keller" required/>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name <span class="req">*</span></label>
+          <input type="text" id="lname" name="last_name" placeholder="James" required/>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email Address <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="ivan@example.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone" placeholder="+233 XX XXX XXXX"/>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="company">Company / Organisation</label>
+          <input type="text" id="company" name="company" placeholder="Acme Inc. (optional)"/>
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" id="country" name="country" placeholder="Ghana"/>
+        </div>
+      </div>
+
+      <!-- ── SECTION 2: Project Details ── -->
+      <p class="form-section-label">Project Details</p>
+
+      <div class="form-group">
+        <label for="project-title">Project Title <span class="req">*</span></label>
+        <input type="text" id="project-title" name="project_title" placeholder="e.g. E-commerce platform, ML Dashboard…" required/>
+      </div>
+
+      <div class="form-group">
+        <label>Service(s) Required <span class="req">*</span></label>
+        <div class="check-grid">
+          <label class="check-item">
+            <input type="checkbox" name="services" value="Backend Engineering"/>
+            <span class="check-box"></span>
+            <span class="check-label">Backend Engineering</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" name="services" value="Data Analysis"/>
+            <span class="check-box"></span>
+            <span class="check-label">Data Analysis</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" name="services" value="Machine Learning"/>
+            <span class="check-box"></span>
+            <span class="check-label">Machine Learning</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" name="services" value="Graphic Design"/>
+            <span class="check-box"></span>
+            <span class="check-label">Graphic Design</span>
+          </label>
+          
+          <label class="check-item">
+            <input type="checkbox" name="services" value="Research & Writing"/>
+            <span class="check-box"></span>
+            <span class="check-label">Research &amp; Writing</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Project Description <span class="req">*</span></label>
+        <textarea id="description" name="description" placeholder="Describe what you want to build, the problem it solves, and any key features…" required></textarea>
+      </div>
+
+      <!-- ── SECTION 3: Budget & Timeline ── -->
+      <p class="form-section-label">Budget &amp; Timeline</p>
+
+      <div class="form-group">
+        <label>Budget Range <span class="req">*</span></label>
+        <div class="pill-group">
+          <input type="radio" name="budget" id="b1" value="Under $500"/>
+          <label for="b1">Under $500</label>
+
+          <input type="radio" name="budget" id="b2" value="$500 – $1,000"/>
+          <label for="b2">$500 – $1,000</label>
+
+          <input type="radio" name="budget" id="b3" value="$1,000 – $3,000"/>
+          <label for="b3">$1,000 – $3,000</label>
+
+          <input type="radio" name="budget" id="b4" value="$3,000+"/>
+          <label for="b4">$3,000+</label>
+
+          <input type="radio" name="budget" id="b5" value="Let's discuss"/>
+          <label for="b5">Let's discuss</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="timeline">Project Timeline</label>
+        <input type="range" id="timeline" name="timeline_weeks" min="1" max="24" value="4"
+               oninput="updateTimeline(this.value)"/>
+        <div class="range-labels"><span>1 week</span><span>24 weeks</span></div>
+        <span id="timeline-val">4 weeks</span>
+      </div>
+
+      <div class="form-group">
+        <label for="start-date">Preferred Start Date</label>
+        <input type="date" id="start-date" name="start_date"/>
+      </div>
+
+      <!-- ── SECTION 4: Additional Info ── -->
+      <p class="form-section-label">Additional Info</p>
+
+      <div class="form-group">
+        <label for="ref-link">Reference / Inspiration Link</label>
+        <input type="url" id="ref-link" name="reference_link" placeholder="https://example.com (optional)"/>
+      </div>
+
+      <div class="form-group">
+        <label>Attach a Brief or File (optional)</label>
+        <div class="file-drop" onclick="document.getElementById('file-input').click()">
+          <input type="file" id="file-input" name="attachment" accept=".pdf,.doc,.docx,.png,.jpg"
+                 onchange="showFileName(this)"/>
+          <p>📎 <span>Click to upload</span> or drag & drop<br/>PDF, DOC, PNG, JPG — max 5MB</p>
+          <p id="file-name"></p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="how">How did you hear about me?</label>
+        <div class="select-wrap">
+          <select id="how" name="how_heard">
+            <option value="" disabled selected>Select…</option>
+            <option>GitHub</option>
+            <option>Instagram</option>
+            <option>Facebook</option>
+            <option>Google Search</option>
+            <option>Referral / Word of mouth</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Hidden field to route to correct email -->
+      <input type="hidden" name="_replyto" id="replyto"/>
+      <input type="hidden" name="_subject" value="New Hire Me Request — Banaye Portfolio"/>
+
+      <div class="form-footer">
+        <p class="form-footer-note">I'll respond within 24 hours with a proposal.</p>
+        <button type="submit" class="btn-submit" id="submitBtn">
+          Submit Enquiry →
+        </button>
+      </div>
+
+      <div class="alert success" id="successMsg">
+        ✓ Enquiry received! I'll get back to you within 24 hours.
+      </div>
+      <div class="alert error" id="errorMsg">
+        ✗ Something went wrong. Email me directly at
+        <a href="mailto:denisbanaye@gmail.com">denisbanaye@gmail.com</a>
+      </div>
+
+    </form>
+
+  </div>
+
+  
+
+</body>
+</html>

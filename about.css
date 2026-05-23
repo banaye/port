@@ -1,0 +1,222 @@
+:root {
+    --cream: #f5f2eb;
+    --navy: #1a1f3c;
+    --red: #c0392b;
+    --muted: #6b6b6b;
+    --border: #d4cfc4;
+    --card-bg: #fefcf8;
+  }
+  
+  body {
+    background-color: var(--cream);
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--navy);
+    min-height: 100vh;
+  }
+  
+  /* ── NAV ── */
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2.5rem;
+    padding: 1.4rem 3rem;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--border);
+  }
+  nav a { text-decoration: none; color: var(--navy); transition: color 0.2s; }
+  nav a:hover { color: var(--red); }
+  nav a.active { color: var(--red); border-bottom: 2px solid var(--red); padding-bottom: 2px; }
+  
+  /* ── ABOUT WRAPPER ── */
+  .about-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 2rem 6rem;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeUp 0.7s ease forwards 0.15s;
+  }
+  
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ── HEADER ── */
+  .about-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+  .about-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 1.6rem;
+  }
+  .about-header h1 span { color: var(--red); }
+  
+  .about-intro {
+    font-size: 1.08rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: #3a3a3a;
+    max-width: 680px;
+    border-left: 3px solid var(--red);
+    padding-left: 1.4rem;
+  }
+  
+  /* ── DIVIDER ── */
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: var(--red);
+    margin: 3rem 0;
+    border-radius: 2px;
+  }
+  
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1.8rem;
+  }
+  
+  /* ── SKILLS GRID ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 3.5rem;
+  }
+  
+  .skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.4rem 1.6rem;
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.5s ease forwards;
+  }
+  .skill-card:nth-child(1) { animation-delay: 0.3s; }
+  .skill-card:nth-child(2) { animation-delay: 0.42s; }
+  .skill-card:nth-child(3) { animation-delay: 0.54s; }
+  .skill-card:nth-child(4) { animation-delay: 0.66s; }
+  .skill-card:nth-child(5) { animation-delay: 0.78s; }
+  
+  .skill-card:hover {
+    border-color: var(--red);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(192,57,43,0.1);
+  }
+  
+  .skill-icon { font-size: 1.6rem; margin-bottom: 0.7rem; display: block; }
+  .skill-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+  .skill-card p { font-size: 0.88rem; font-weight: 300; line-height: 1.65; color: var(--muted); }
+  
+  /* ── APPROACH BLOCK ── */
+  .approach-block {
+    background: var(--navy);
+    color: var(--cream);
+    border-radius: 4px;
+    padding: 2.4rem 2.8rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .approach-block::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 12rem;
+    color: rgba(192,57,43,0.15);
+    position: absolute;
+    top: -2rem; left: 1rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .approach-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  .approach-block p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: #ccc;
+    position: relative;
+    z-index: 1;
+  }
+  .approach-block p strong { color: var(--red); font-weight: 600; }
+  
+  /* ── BEYOND BLOCK ── */
+  .beyond-block { margin-bottom: 3.5rem; }
+  .beyond-block p { font-size: 1rem; font-weight: 300; line-height: 1.85; color: #3a3a3a; }
+  
+  /* ── QUOTE ── */
+  blockquote {
+    border-left: 3px solid var(--red);
+    padding: 0.6rem 1.4rem;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 3rem;
+  }
+  
+  /* ── CTA ── */
+  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: #a93226; transform: translateY(-2px); }
+  
+  .btn-outline {
+    display: inline-block;
+    border: 2px solid var(--navy);
+    color: var(--navy);
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--red); color: var(--red); transform: translateY(-2px); }
+  
+  @media (max-width: 600px) {
+    nav { padding: 1rem 1.2rem; gap: 1.4rem; font-size: 0.85rem; }
+    .about-section { padding: 3rem 1.2rem 4rem; }
+    .approach-block { padding: 1.8rem 1.6rem; }
+  }
+  
+  
+  
