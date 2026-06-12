@@ -225,7 +225,7 @@ span{
 .typing-text span{
     position: relative;
 }
-
+/*
 .typing-text span::before{
     content: 'Data Analyst';
     color: #ff3d00;
@@ -265,7 +265,7 @@ span{
         content: "Graphic Designer"
     }
 }
-
+*/
 
 @media (max-width: 1000px){
     .home{
@@ -291,5 +291,111 @@ span{
         height: 20rem;
         min-width: 20rem;
         min-height: 20rem;
+    }
+}
+/* Mobile Menu Button - Add this */
+.menu-btn {
+    display: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: black;
+    transition: 0.3s ease;
+    background: none;
+    border: none;
+    z-index: 101;
+}
+
+.menu-btn:hover {
+    color: #ff3d00;
+}
+
+/* Overlay background when menu is open */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 98;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Fix for mobile navigation */
+@media (max-width: 991px){
+    /* Keep your original nav styles but modify slightly */
+    nav {
+        position: fixed; /* Changed from absolute to fixed */
+        top: 0; /* Changed from 100% to 0 */
+        right: -100%; /* Hidden off screen */
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        border-left: 3px solid #ff3d00;
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        background-color: white;
+        border-top: none;
+        display: block !important; /* Override original display:none */
+        transition: right 0.3s ease-in-out;
+        z-index: 99;
+        padding-top: 8rem;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    /* When active, show the menu */
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+    }
+
+    nav li {
+        margin: 0;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        font-size: 1.8rem;
+        margin: 2rem 0;
+        padding: 1rem;
+        transition: 0.3s ease;
+    }
+    
+    nav a:hover,
+    nav a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: none;
+        background-color: #ff3d00;
+        color: white;
+    }
+
+    /* Show menu button on mobile */
+    .menu-btn {
+        display: block;
+    }
+}
+
+/* Fix for very small screens */
+@media (max-width: 480px) {
+    nav {
+        width: 85%;
+    }
+    
+    nav a {
+        font-size: 1.6rem;
+        margin: 1.5rem 0;
     }
 }

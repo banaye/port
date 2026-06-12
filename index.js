@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Typing text animation fix
-   /* const typingSpan = document.querySelector('.typing-text span');
+   const typingSpan = document.querySelector('.typing-text span');
     if (typingSpan) {
         const words = ['Backend Engineer', 'ML Engineer', 'Software Engineer', 'Graphic Designer', 'Data Analyst'];
         let wordIndex = 0;
@@ -123,13 +123,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const speed = isDeleting ? 100 : 150;
             setTimeout(typeEffect, speed);
-        }*/
+        }
         
         // Remove CSS pseudo-element animation and use JS instead
-       /* typingSpan.style.setProperty('--content', '');
+        typingSpan.style.setProperty('--content', '');
         typingSpan.classList.add('js-typing');
         typeEffect();
-    }*/
+    } 
     
     // Add scroll reveal animation
     const observerOptions = {
