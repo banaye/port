@@ -192,27 +192,27 @@ span{
     text-align: center;
     margin-top: 1rem;
     display: flex;
+    justify-content: center;
 }
 
 .btn{
     display: inline-block;
-    padding: 0.8rem 1.8rem;
-    background-color:grey;
-    color: red;
-    font-size: 1.5rem;
-    font-weight: 500;
+    padding: 1rem 2.5rem;
+    background-color: transparent;
+    color: #ff3d00;
+    font-size: 1.6rem;
+    font-weight: 600;
     border-radius: 4rem;
     transition: 0.3s ease;
     border: 2px solid #ff3d00;
     cursor: pointer;
-    letter-spacing: 0.3rem;
-
+    letter-spacing: 0.1rem;
 }
 
 .btn:hover{
-    transform:scale3d(1.03);
+    transform: translateY(-3px);
     background-color: #ff3d00;
-    color: black;
+    color: white;
     box-shadow: 0 0 25px rgba(255, 61, 0, 0.5);
 }
 
@@ -225,47 +225,12 @@ span{
 .typing-text span{
     position: relative;
 }
-/*
-.typing-text span::before{
-    content: 'Data Analyst';
-    color: #ff3d00;
-    animation: words 20s infinite;
-}
 
-.typing-text span::after{
-    content: '';
-    position: absolute;
-    border-left: 3px solid #ff3d00;
-    right: -8;
-    width: calc(100% + 8px);
-    height: 100%;
-    background-color: transparent;
-    animation: cursor 0.6s steps(30) infinite;
+/* CSS Animation disabled to prevent conflict with JS */
+.typing-text span::before,
+.typing-text span::after {
+    display: none;
 }
-
-@keyframes cursor{
-    to {
-        border-left: 3px solid transparent;
-    }
-}
-@keyframes words{
-    0%, 20%{
-    content: "Backend Engineer"
-    }
-    21%, 40%{
-        content: "ML Engineer"
-    }
-
-    41%, 60%{
-        content:
-           "Software Engineer"
-
-    }
-    61%, 80%{
-        content: "Graphic Designer"
-    }
-}
-*/
 
 @media (max-width: 1000px){
     .home{
@@ -273,18 +238,19 @@ span{
     }
 }
 
-
 @media (max-width: 995px){
     .home{
         flex-direction: column;
         text-align: center;
         margin: 5rem 4rem;
+        gap: 3rem;
     }
     .home-content h1{
         font-size: 4rem;
     }
     .home-content h3{
         font-size: 2rem;
+        margin-bottom: 1rem;
     }
     .home-img{
         width: 20rem;
@@ -292,8 +258,27 @@ span{
         min-width: 20rem;
         min-height: 20rem;
     }
+    .home-content p{
+        text-align: center;
+        padding: 0 1rem;
+    }
+    /* Center social icons on mobile */
+    .social-icons {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .social-icons a {
+        margin: 2rem 1rem;
+    }
+    /* Center hire button */
+    .hire-me-container {
+        justify-content: center;
+    }
 }
-/* Mobile Menu Button - Add this */
+
+/* Mobile Menu Button */
 .menu-btn {
     display: none;
     font-size: 2.5rem;
@@ -330,11 +315,10 @@ span{
 
 /* Fix for mobile navigation */
 @media (max-width: 991px){
-    /* Keep your original nav styles but modify slightly */
     nav {
-        position: fixed; /* Changed from absolute to fixed */
-        top: 0; /* Changed from 100% to 0 */
-        right: -100%; /* Hidden off screen */
+        position: fixed;
+        top: 0;
+        right: -100%;
         width: 70%;
         max-width: 300px;
         height: 100vh;
@@ -343,14 +327,13 @@ span{
         border-bottom-left-radius: 0;
         background-color: white;
         border-top: none;
-        display: block !important; /* Override original display:none */
+        display: block !important;
         transition: right 0.3s ease-in-out;
         z-index: 99;
         padding-top: 8rem;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
     }
 
-    /* When active, show the menu */
     nav.active {
         right: 0;
     }
@@ -382,7 +365,6 @@ span{
         color: white;
     }
 
-    /* Show menu button on mobile */
     .menu-btn {
         display: block;
     }
@@ -397,5 +379,33 @@ span{
     nav a {
         font-size: 1.6rem;
         margin: 1.5rem 0;
+    }
+    
+    .home {
+        margin: 5rem 2rem;
+    }
+    
+    .home-content h1 {
+        font-size: 3rem;
+    }
+    
+    .home-content h3 {
+        font-size: 1.8rem;
+    }
+    
+    .typing-text {
+        font-size: 2rem;
+    }
+    
+    .social-icons a {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.6rem;
+        margin: 1.5rem 0.8rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.4rem;
     }
 }
